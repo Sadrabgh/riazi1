@@ -1,0 +1,37 @@
+{
+  "name": "riazi1-darsnameh",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "سایت استاتیک و تعاملی درسنامه ریاضی عمومی ۱ با فونت ایران‌یکان، انیمیشن‌های Framer Motion و اصول روانشناسی UX",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "framer-motion": "^12.4.7",
+    "katex": "^0.16.21",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@tailwindcss/vite": "^4.0.14",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/katex": "^0.16.7",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^26.0.0",
+    "tailwindcss": "^4.0.14",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
+  }
+}

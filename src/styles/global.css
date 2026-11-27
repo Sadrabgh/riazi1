@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Self-Hosted IRANYekan Web Fonts (Zero External Dependency)
+   ========================================================================== */
+@font-face {
+  font-family: 'IRANYekan';
+  src: url('../assets/fonts/iranyekan-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: url('../assets/fonts/iranyekan-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: url('../assets/fonts/iranyekan-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Light Mode — Warm Editorial Paper & Crisp Ink
+   ========================================================================== */
+:root,
+[data-theme="light"] {
+  --bg-page: #FAF8F4;
+  --bg-surface: #FFFFFF;
+  --bg-recessed: #F6F3EC;
+  --bg-subtle: #F0ECE3;
+  --bg-hover: #E8E2D5;
+  --bg-glass: rgba(250, 248, 244, 0.88);
+
+  --border-subtle: #E6E0D4;
+  --border-strong: #CCC3B2;
+
+  --text-primary: #141311;
+  --text-secondary: #3B3833;
+  --text-muted: #6C665C;
+  --katex-color: #141311;
+
+  --brand: #0F766E;
+  --brand-solid: #0F766E;
+  --on-brand: #FFFFFF;
+  --brand-soft: rgba(15, 118, 110, 0.10);
+  --brand-glow: rgba(15, 118, 110, 0.06);
+
+  --success: #059669;
+  --success-solid: #059669;
+  --success-bg: #ECFDF5;
+  --success-border: #10B981;
+  --success-text: #065F46;
+
+  --warn: #D97706;
+  --warn-bg: #FFFBEB;
+  --warn-border: #F59E0B;
+  --warn-text: #92400E;
+
+  --danger: #DC2626;
+  --danger-solid: #DC2626;
+  --danger-bg: #FEF2F2;
+  --danger-border: #EF4444;
+  --danger-text: #991B1B;
+
+  --grid-dot: rgba(100, 116, 139, 0.16);
+  --surface-highlight: inset 0 0 0 0 transparent;
+  --shadow-xs: 0 1px 2px rgba(20, 19, 17, 0.04);
+  --shadow-sm: 0 2px 6px rgba(20, 19, 17, 0.04), 0 6px 18px rgba(20, 19, 17, 0.04);
+  --shadow-md: 0 6px 18px rgba(20, 19, 17, 0.06), 0 16px 36px rgba(20, 19, 17, 0.07);
+  --shadow-lg: 0 16px 46px rgba(20, 19, 17, 0.14);
+}
+
+/* ==========================================================================
+   Dark Mode — Low-Glare Matte Night-Study Mode (Anti-Halation & Eye Comfort)
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-page: #13161D;
+  --bg-surface: #191D26;
+  --bg-recessed: #141820;
+  --bg-subtle: #202531;
+  --bg-hover: #272D3B;
+  --bg-glass: rgba(19, 22, 29, 0.90);
+
+  --border-subtle: rgba(208, 216, 230, 0.08);
+  --border-strong: rgba(208, 216, 230, 0.16);
+
+  --text-primary: #D8DEE9;
+  --text-secondary: #AEB7C6;
+  --text-muted: #7F8A9E;
+  --katex-color: #D2DAE6;
+
+  --brand: #63A8A0;
+  --brand-solid: #2A6963;
+  --on-brand: #E8F3F2;
+  --brand-soft: rgba(99, 168, 160, 0.12);
+  --brand-glow: rgba(99, 168, 160, 0.06);
+
+  --success: #67A88C;
+  --success-solid: #2B654E;
+  --success-bg: rgba(103, 168, 140, 0.08);
+  --success-border: rgba(103, 168, 140, 0.22);
+  --success-text: #94C4AE;
+
+  --warn: #C9A465;
+  --warn-bg: rgba(201, 164, 101, 0.08);
+  --warn-border: rgba(201, 164, 101, 0.22);
+  --warn-text: #D6BD90;
+
+  --danger: #C97D7D;
+  --danger-solid: #7D3838;
+  --danger-bg: rgba(201, 125, 125, 0.08);
+  --danger-border: rgba(201, 125, 125, 0.22);
+  --danger-text: #D69B9B;
+
+  --grid-dot: rgba(180, 192, 212, 0.06);
+  --surface-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.24), 0 6px 18px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.34);
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.50);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  font-family: 'IRANYekan', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.28s ease, color 0.28s ease;
+  overflow-x: clip;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Book-grade Reading Rhythm (Mobile-First) */
+.lesson-prose {
+  font-size: 15.5px;
+  line-height: 2;
+  color: var(--text-secondary);
+}
+
+@media (min-width: 640px) {
+  .lesson-prose {
+    font-size: 16.5px;
+    line-height: 2.08;
+  }
+}
+
+/* Layered Card Surface (Soft Matte Separation in Dark Mode) */
+.surface-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--surface-highlight), var(--shadow-sm);
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Recessed Formula Tray (Dedicated Math Board in Both Modes) */
+.math-tray {
+  background: var(--bg-recessed);
+  border: 1px solid var(--border-subtle);
+}
+
+.math-grid-bg {
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(var(--grid-dot) 1.15px, transparent 1.15px);
+  background-size: 22px 22px;
+}
+
+/* Calm Matte Blueprint Styling for Chapter SVG Artworks in Dark Mode */
+[data-theme="dark"] .blueprint-svg {
+  opacity: 0.88;
+}
+
+/* KaTeX RTL/LTR Harmony + Anti-Halation Night Readability */
+.katex {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-size: 1.03em;
+  color: var(--katex-color);
+}
+
+@media (min-width: 640px) {
+  .katex {
+    font-size: 1.1em;
+  }
+}
+
+.katex-display {
+  direction: ltr;
+  unicode-bidi: isolate;
+  margin: 0.45rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 0.45rem 0.35rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.katex-display > .katex {
+  display: inline-block;
+  min-width: min-content;
+}
+
+.math-scroll-box {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Subtle Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    padding-bottom: 0 !important;
+  }
+  .surface-card {
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
